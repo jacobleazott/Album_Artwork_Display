@@ -32,6 +32,7 @@ IMAGE_SIZE = 1024
 
 pwd = str(pathlib.Path().absolute()) + '/'
 track_info_db = "track_info.db"
+album_image_label = None
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DESCRIPTION: Grabs a random track from our db, populates the tkinter elements, and updates every 20s
@@ -39,6 +40,7 @@ INPUT: NA
 OUTPUT: NA
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 def update_album():
+    global album_image_label
     conn = sqlite3.connect(track_info_db)
 
     track_data = conn.execute("SELECT * FROM 'info' ORDER BY RANDOM() LIMIT 1;").fetchone()
@@ -48,7 +50,7 @@ def update_album():
     album.set(track_data[2])
 
     img = Image.open(pwd + f"Albums/{track_data[3]}.png")
-    img = img.resize((IMAGE_SIZE, IMAGE_SIZE))
+    # img = img.resize((IMAGE_SIZE, IMAGE_SIZE))
     img2 = ImageTk.PhotoImage(img)
 
     album_image_label.configure(image=img2)
@@ -70,7 +72,7 @@ def update_album():
 
 
 def main():
-    if not Settings.debug:-
+    global album_image_label
     root.attributes("-fullscreen", fullscreen)
     root.overrideredirect(1)
     root.title("Spotify PLayer")
