@@ -1,0 +1,5 @@
+# Add this file to both /etc/xdg/autostart and /home/pi/.config/autostart
+[Desktop Entry]
+Name=Album
+Exec=/home/pi/projcets/Album_Artwork_Display/start.sh
+Type=Application
