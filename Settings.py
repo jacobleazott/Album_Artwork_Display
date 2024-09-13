@@ -11,7 +11,7 @@ title_font = {
     "bd": 0,
     "highlightthickness": 0,
     "relief": "flat",
-    "font": ("Circular Black", 55),
+    "font": ("Circular Black", 65),
     "justify": "left"
 }
 
@@ -21,7 +21,7 @@ artist_font = {
     "bd": 0,
     "highlightthickness": 0,
     "relief": "flat",
-    "font": ("Circular Book", 26)
+    "font": ("Circular Book", 30)
 }
 
 album_font = {
@@ -30,5 +30,5 @@ album_font = {
     "bd": 0,
     "highlightthickness": 0,
     "relief": "flat",
-    "font": ("Circular Book italic", 26, "italic")
+    "font": ("Circular Book italic", 30, "italic")
 }

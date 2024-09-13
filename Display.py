@@ -29,7 +29,7 @@ DISPLAY_HEIGHT = 1280
 IMAGE_SIZE = 1024
 MAX_TEXT_WIDTH = 1000
 TRACK_INFO_DB = "track_info.db"
-
+MS_WAIT_BETWEEN_CHANGE = 15000
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 DESCRIPTION: <Configure> event for labels to dynamically adjust size based on font, text size and screen width
@@ -76,7 +76,7 @@ def update_album():
 
     # root.update_idletasks()
     root.update()
-    root.after(2000, update_album)
+    root.after(MS_WAIT_BETWEEN_CHANGE, update_album)
 
 
 def main():
